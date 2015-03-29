@@ -54,7 +54,7 @@ class ViewController: UIViewController {
 
         priceSlider = UISlider(frame: CGRectMake(10, 70, 320, 20))
         priceSlider!.minimumValue = 0
-        priceSlider!.maximumValue = 2000
+        priceSlider!.maximumValue = 7
         priceSlider!.continuous = true
         priceSlider!.addTarget(self, action: Selector("priceSliderChange"), forControlEvents: .ValueChanged)
         self.view.addSubview(priceSlider!)
@@ -69,7 +69,7 @@ class ViewController: UIViewController {
         
         peopleSlider = UISlider(frame: CGRectMake(10, 170, 320, 20))
         peopleSlider!.minimumValue = 0
-        peopleSlider!.maximumValue = 100
+        peopleSlider!.maximumValue = 4
         peopleSlider!.continuous = true
         peopleSlider!.addTarget(self, action: Selector("peopleSliderChange"), forControlEvents: .ValueChanged)
         self.view.addSubview(peopleSlider!)
@@ -161,13 +161,13 @@ class ViewController: UIViewController {
     }
 
     func priceSliderChange() {
-        price = Int(priceSlider!.value)
+        price = Int(round(exp(Double(priceSlider!.value))))
         updateCost()
         priceLabel!.text = "\(price)"
     }
     
     func peopleSliderChange() {
-        people = Int(peopleSlider!.value)
+        people = Int(round(exp(Double(peopleSlider!.value))))
         updateCost()
         peopleLabel!.text = "\(people)"
     }

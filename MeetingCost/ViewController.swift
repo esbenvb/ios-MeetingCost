@@ -177,6 +177,22 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func saveDefaults() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(self), forKey: "appState")
+    }
+    
+     class func loadDefaults() -> AppState {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let data = defaults.objectForKey("appState") as? NSData {
+            let appState = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? AppState
+            return appState!
+        }
+        else {
+            return AppState()
+        }
+    }
+    
 
 }
 

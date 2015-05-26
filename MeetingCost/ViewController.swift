@@ -8,23 +8,17 @@
 
 import UIKit
 
-enum StateEnumerator {
-    case Running
-    case Stopped
-    case Paused
-}
-
 class ViewController: UIViewController {
+    var appState = AppState()
+    
     let durationLabelPrefix = "Duration: "
     let costLabelPrefix = "Cost: "
     
     var priceLabel: UILabel?
     var priceSlider: UISlider?
-    var price = 1
     
     var peopleLabel: UILabel?
     var peopleSlider: UISlider?
-    var people = 2
     
     var startButton: UIButton?
     var resetButton: UIButton?
@@ -32,14 +26,11 @@ class ViewController: UIViewController {
     var durationLabel: UILabel?
     var totalCostLabel: UILabel?
     
-    var duration = 0
+    var currentDuration = 0
     var previousDuration = 0
     
-    var startTime = NSDate()
     var cost: Float = 0.0
-    
-    var state = StateEnumerator.Stopped
-    
+        
     var timer = NSTimer()
     
     var formatter = NSDateFormatter()
@@ -60,7 +51,7 @@ class ViewController: UIViewController {
         self.view.addSubview(priceSlider!)
         
         priceLabel = UILabel(frame: CGRectMake(10, 110, 320, 20))
-        priceLabel!.text = "\(price)"
+        priceLabel!.text = "\(appState.price)"
         self.view.addSubview(priceLabel!)
 
         var peopleTopLabel = UILabel(frame: CGRectMake(10, 130, 320, 20))
@@ -75,7 +66,7 @@ class ViewController: UIViewController {
         self.view.addSubview(peopleSlider!)
         
         peopleLabel = UILabel(frame: CGRectMake(10, 210, 100, 20))
-        peopleLabel!.text = "\(people)"
+        peopleLabel!.text = "\(appState.people)"
         self.view.addSubview(peopleLabel!)
 
         startButton = UIButton.buttonWithType(UIButtonType.System) as? UIButton
@@ -92,7 +83,7 @@ class ViewController: UIViewController {
         self.view.addSubview(resetButton!)
         
         durationLabel = UILabel(frame: CGRectMake(10, 290, 320, 20))
-        durationLabel!.text = durationLabelPrefix + durationToString(duration)
+        durationLabel!.text = durationLabelPrefix + durationToString(appState.elapsed)
         self.view.addSubview(durationLabel!)
 
         totalCostLabel = UILabel(frame: CGRectMake(10, 320, 320, 20))
@@ -104,39 +95,39 @@ class ViewController: UIViewController {
     }
     
     func clockTick() {
-        duration = Int(NSDate().timeIntervalSinceDate(startTime))
-        
-        durationLabel!.text = durationLabelPrefix + durationToString(duration + previousDuration)
+        currentDuration = Int(NSDate().timeIntervalSinceDate(appState.startTime))
+        appState.elapsed = currentDuration + previousDuration
+        durationLabel!.text = durationLabelPrefix + durationToString(appState.elapsed)
         updateCost()
     }
     
     func updateCost() {
-        cost = Float(duration * people * price) / 60 / 60
+        cost = Float(appState.elapsed * appState.people * appState.price) / 60 / 60
         totalCostLabel!.text = costLabelPrefix + String(format: "%.02f", cost)
 
     }
     
     func startButtonPressed() {
-        switch state{
+        switch appState.state{
         // Pause
         case .Running:
-            state = .Paused
-            previousDuration = duration
+            appState.state = .Paused
+            previousDuration = appState.elapsed
             timer.invalidate()
             startButton!.setTitle("Continue", forState: .Normal)
             resetButton!.enabled = true
         // Continue
         case .Paused:
-            state = .Running
-            startTime = NSDate()
+            appState.state = .Running
+            appState.startTime = NSDate()
             timer.invalidate()
             timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("clockTick"), userInfo: nil, repeats: true)
             startButton!.setTitle("Pause", forState: .Normal)
             resetButton!.enabled = false
         // Start
         case .Stopped:
-            state = .Running
-            startTime = NSDate()
+            appState.state = .Running
+            appState.startTime = NSDate()
             timer.invalidate()
             timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("clockTick"), userInfo: nil, repeats: true)
             startButton!.setTitle("Pause", forState: .Normal)
@@ -147,13 +138,14 @@ class ViewController: UIViewController {
     }
     
     func resetButtonPressed() {
-        state = .Stopped
+        appState.state = .Stopped
+        appState.elapsed = 0
         timer.invalidate()
-        startTime = NSDate()
-        duration = 0
+        appState.startTime = NSDate()
+        currentDuration = 0
         previousDuration = 0
         updateCost()
-        durationLabel!.text = durationLabelPrefix + durationToString(duration)
+        durationLabel!.text = durationLabelPrefix + durationToString(appState.elapsed)
         resetButton!.enabled = false
         startButton!.setTitle("Start", forState: .Normal)
         NSLog("Reset")
@@ -161,15 +153,15 @@ class ViewController: UIViewController {
     }
 
     func priceSliderChange() {
-        price = Int(round(exp(Double(priceSlider!.value))))
+        appState.price = Int(round(exp(Double(priceSlider!.value))))
         updateCost()
-        priceLabel!.text = "\(price)"
+        priceLabel!.text = "\(appState.price)"
     }
     
     func peopleSliderChange() {
-        people = Int(round(exp(Double(peopleSlider!.value))))
+        appState.people = Int(round(exp(Double(peopleSlider!.value))))
         updateCost()
-        peopleLabel!.text = "\(people)"
+        peopleLabel!.text = "\(appState.people)"
     }
 
     func durationToString (duration: Int) -> String {

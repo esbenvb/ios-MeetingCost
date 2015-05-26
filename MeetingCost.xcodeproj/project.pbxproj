@@ -12,6 +12,7 @@
 		90C23BED1AC75D620054F850 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C23BEC1AC75D620054F850 /* Images.xcassets */; };
 		90C23BF01AC75D620054F850 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90C23BEE1AC75D620054F850 /* LaunchScreen.xib */; };
 		90C23BFC1AC75D620054F850 /* MeetingCostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C23BFB1AC75D620054F850 /* MeetingCostTests.swift */; };
+		90FB23091B15066100C008B8 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB23081B15066100C008B8 /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		90C23BF51AC75D620054F850 /* MeetingCostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeetingCostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C23BFA1AC75D620054F850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90C23BFB1AC75D620054F850 /* MeetingCostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingCostTests.swift; sourceTree = "<group>"; };
+		90FB23081B15066100C008B8 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +78,11 @@
 			isa = PBXGroup;
 			children = (
 				90C23BE51AC75D620054F850 /* AppDelegate.swift */,
-				90C23BE71AC75D620054F850 /* ViewController.swift */,
+				90FB23081B15066100C008B8 /* AppState.swift */,
 				90C23BEC1AC75D620054F850 /* Images.xcassets */,
 				90C23BEE1AC75D620054F850 /* LaunchScreen.xib */,
 				90C23BE31AC75D620054F850 /* Supporting Files */,
+				90C23BE71AC75D620054F850 /* ViewController.swift */,
 			);
 			path = MeetingCost;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90FB23091B15066100C008B8 /* AppState.swift in Sources */,
 				90C23BE81AC75D620054F850 /* ViewController.swift in Sources */,
 				90C23BE61AC75D620054F850 /* AppDelegate.swift in Sources */,
 			);
@@ -395,6 +399,7 @@
 				90C23C011AC75D620054F850 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		90C23C021AC75D620054F850 /* Build configuration list for PBXNativeTarget "MeetingCostTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +408,7 @@
 				90C23C041AC75D620054F850 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

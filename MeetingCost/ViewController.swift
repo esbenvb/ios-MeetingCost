@@ -20,11 +20,11 @@ class ViewController: UIViewController {
     
     var priceLabel: UILabel?
     var priceSlider: UISlider?
-    var price = 0
+    var price = 1
     
     var peopleLabel: UILabel?
     var peopleSlider: UISlider?
-    var people = 0
+    var people = 2
     
     var startButton: UIButton?
     var resetButton: UIButton?
@@ -53,8 +53,8 @@ class ViewController: UIViewController {
         self.view.addSubview(priceTopLabel)
 
         priceSlider = UISlider(frame: CGRectMake(10, 70, 320, 20))
-        priceSlider!.minimumValue = 0
-        priceSlider!.maximumValue = 7
+        priceSlider!.minimumValue = log(1.45) // Make it start at 1 but close to 2
+        priceSlider!.maximumValue = log(2000)
         priceSlider!.continuous = true
         priceSlider!.addTarget(self, action: Selector("priceSliderChange"), forControlEvents: .ValueChanged)
         self.view.addSubview(priceSlider!)
@@ -68,8 +68,8 @@ class ViewController: UIViewController {
         self.view.addSubview(peopleTopLabel)
         
         peopleSlider = UISlider(frame: CGRectMake(10, 170, 320, 20))
-        peopleSlider!.minimumValue = 0
-        peopleSlider!.maximumValue = 4
+        peopleSlider!.minimumValue = log(2.45) // Make it start at 2 but close to 3
+        peopleSlider!.maximumValue = log(100)
         peopleSlider!.continuous = true
         peopleSlider!.addTarget(self, action: Selector("peopleSliderChange"), forControlEvents: .ValueChanged)
         self.view.addSubview(peopleSlider!)

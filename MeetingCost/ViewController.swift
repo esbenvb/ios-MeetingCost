@@ -87,11 +87,20 @@ class ViewController: UIViewController {
         self.view.addSubview(durationLabel!)
 
         totalCostLabel = UILabel(frame: CGRectMake(10, 320, 320, 20))
+        
+        updateSliders()
         updateCost()
     
         self.view.addSubview(totalCostLabel!)
 
         
+    }
+    
+    func updateSliders() {
+        peopleSlider?.value = log(Float(appState.people))
+        peopleSliderChange()
+        priceSlider?.value = log(Float(appState.price))
+        priceSliderChange()
     }
     
     func clockTick() {
@@ -111,33 +120,35 @@ class ViewController: UIViewController {
         switch appState.state{
         // Pause
         case .Running:
-            appState.state = .Paused
-            previousDuration = appState.elapsed
-            timer.invalidate()
-            startButton!.setTitle("Continue", forState: .Normal)
-            resetButton!.enabled = true
+            controlPause()
         // Continue
         case .Paused:
-            appState.state = .Running
-            appState.startTime = NSDate()
-            timer.invalidate()
-            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("clockTick"), userInfo: nil, repeats: true)
-            startButton!.setTitle("Pause", forState: .Normal)
-            resetButton!.enabled = false
+            controlStart()
         // Start
         case .Stopped:
-            appState.state = .Running
-            appState.startTime = NSDate()
-            timer.invalidate()
-            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("clockTick"), userInfo: nil, repeats: true)
-            startButton!.setTitle("Pause", forState: .Normal)
-            resetButton!.enabled = false
+            controlStart()
         }
         NSLog("Start")
-
     }
     
-    func resetButtonPressed() {
+    func controlStart() {
+        appState.state = .Running
+        appState.startTime = NSDate()
+        timer.invalidate()
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("clockTick"), userInfo: nil, repeats: true)
+        startButton!.setTitle("Pause", forState: .Normal)
+        resetButton!.enabled = false
+    }
+
+    func controlPause() {
+        appState.state = .Paused
+        previousDuration = appState.elapsed
+        timer.invalidate()
+        startButton!.setTitle("Continue", forState: .Normal)
+        resetButton!.enabled = true
+    }
+
+    func controlReset() {
         appState.state = .Stopped
         appState.elapsed = 0
         timer.invalidate()
@@ -148,8 +159,12 @@ class ViewController: UIViewController {
         durationLabel!.text = durationLabelPrefix + durationToString(appState.elapsed)
         resetButton!.enabled = false
         startButton!.setTitle("Start", forState: .Normal)
+        
+    }
+    
+    func resetButtonPressed() {
+        controlReset()
         NSLog("Reset")
-
     }
 
     func priceSliderChange() {
@@ -171,26 +186,9 @@ class ViewController: UIViewController {
         return String(format:"%02d:%02d:%02d", hours, minutes, seconds)
     }
     
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    func saveDefaults() {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(self), forKey: "appState")
-    }
-    
-     class func loadDefaults() -> AppState {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if let data = defaults.objectForKey("appState") as? NSData {
-            let appState = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? AppState
-            return appState!
-        }
-        else {
-            return AppState()
-        }
     }
     
 

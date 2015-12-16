@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		904109191C22114E00E7B6C8 /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 904109181C22114E00E7B6C8 /* MainScreen.storyboard */; };
 		90C23BE61AC75D620054F850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C23BE51AC75D620054F850 /* AppDelegate.swift */; };
 		90C23BE81AC75D620054F850 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C23BE71AC75D620054F850 /* ViewController.swift */; };
 		90C23BED1AC75D620054F850 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C23BEC1AC75D620054F850 /* Images.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		904109181C22114E00E7B6C8 /* MainScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
 		90C23BE01AC75D620054F850 /* MeetingCost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetingCost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C23BE41AC75D620054F850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90C23BE51AC75D620054F850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				90C23BEE1AC75D620054F850 /* LaunchScreen.xib */,
 				90C23BE31AC75D620054F850 /* Supporting Files */,
 				90C23BE71AC75D620054F850 /* ViewController.swift */,
+				904109181C22114E00E7B6C8 /* MainScreen.storyboard */,
 			);
 			path = MeetingCost;
 			sourceTree = "<group>";
@@ -158,7 +161,7 @@
 			attributes = {
 				LastSwiftMigration = 0720;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Esben von Buchwald";
 				TargetAttributes = {
 					90C23BDF1AC75D620054F850 = {
@@ -196,6 +199,7 @@
 			files = (
 				90C23BF01AC75D620054F850 /* LaunchScreen.xib in Resources */,
 				90C23BED1AC75D620054F850 /* Images.xcassets in Resources */,
+				904109191C22114E00E7B6C8 /* MainScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +273,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -334,6 +339,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MeetingCost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dk.vonbuchwald.esben.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -344,6 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MeetingCost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dk.vonbuchwald.esben.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -362,6 +369,7 @@
 				);
 				INFOPLIST_FILE = MeetingCostTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dk.vonbuchwald.esben.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeetingCost.app/MeetingCost";
 			};
@@ -377,6 +385,7 @@
 				);
 				INFOPLIST_FILE = MeetingCostTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dk.vonbuchwald.esben.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeetingCost.app/MeetingCost";
 			};

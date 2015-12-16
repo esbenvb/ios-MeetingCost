@@ -156,6 +156,8 @@
 		90C23BD81AC75D620054F850 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Esben von Buchwald";
 				TargetAttributes = {

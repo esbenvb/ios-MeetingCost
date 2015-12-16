@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var priceTopLabel = UILabel(frame: CGRectMake(10, 30, 320, 20))
+        let priceTopLabel = UILabel(frame: CGRectMake(10, 30, 320, 20))
         priceTopLabel.text = "Average hourly price or salary"
         self.view.addSubview(priceTopLabel)
 
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         priceLabel!.text = "\(appState.price)"
         self.view.addSubview(priceLabel!)
 
-        var peopleTopLabel = UILabel(frame: CGRectMake(10, 130, 320, 20))
+        let peopleTopLabel = UILabel(frame: CGRectMake(10, 130, 320, 20))
         peopleTopLabel.text = "Number of people"
         self.view.addSubview(peopleTopLabel)
         
@@ -69,14 +69,14 @@ class ViewController: UIViewController {
         peopleLabel!.text = "\(appState.people)"
         self.view.addSubview(peopleLabel!)
 
-        startButton = UIButton.buttonWithType(UIButtonType.System) as? UIButton
+        startButton = UIButton(type: UIButtonType.System) as? UIButton
         startButton!.frame = CGRectMake(10, 230, 80, 40)
         startButton!.setTitle("Start", forState: UIControlState.Normal)
         startButton!.addTarget(self, action: Selector("startButtonPressed"), forControlEvents: .TouchUpInside)
         self.view.addSubview(startButton!)
 
         
-        resetButton = UIButton.buttonWithType(UIButtonType.System) as? UIButton
+        resetButton = UIButton(type: UIButtonType.System) as? UIButton
         resetButton!.frame = CGRectMake(150, 230, 80, 40)
         resetButton!.setTitle("Reset", forState: UIControlState.Normal)
         resetButton!.addTarget(self, action: Selector("resetButtonPressed"), forControlEvents: .TouchUpInside)

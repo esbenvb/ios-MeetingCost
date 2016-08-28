@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ControlsView" customModule="MeetingCost">
+            <connections>
+                <outlet property="resetButton" destination="VbY-jR-xAg" id="S9s-5o-vlZ"/>
+                <outlet property="startButton" destination="Vh1-kv-Pwm" id="P2r-AH-fOX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vh1-kv-Pwm">
+                    <rect key="frame" x="206" y="8" width="70" height="30"/>
+                    <state key="normal" title="BUTTON1"/>
+                    <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                        <rect key="frame" x="38" y="8" width="514" height="30"/>
+                    </variation>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbY-jR-xAg">
+                    <rect key="frame" x="324" y="8" width="70" height="30"/>
+                    <state key="normal" title="BUTTON2"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="Vh1-kv-Pwm" secondAttribute="trailing" constant="24" id="8sh-L2-ZuS"/>
+                <constraint firstItem="Vh1-kv-Pwm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="AlH-Qc-xoF"/>
+                <constraint firstItem="VbY-jR-xAg" firstAttribute="bottom" secondItem="Vh1-kv-Pwm" secondAttribute="bottom" id="IaR-CU-Cqm"/>
+                <constraint firstItem="VbY-jR-xAg" firstAttribute="height" secondItem="Vh1-kv-Pwm" secondAttribute="height" id="KGn-Sj-4TP"/>
+                <constraint firstItem="VbY-jR-xAg" firstAttribute="width" secondItem="Vh1-kv-Pwm" secondAttribute="width" id="Ud9-hs-W3j"/>
+                <constraint firstItem="VbY-jR-xAg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="24" id="re2-fu-T6o"/>
+            </constraints>
+            <point key="canvasLocation" x="357" y="499"/>
+        </view>
+    </objects>
+</document>

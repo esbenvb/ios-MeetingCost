@@ -37,15 +37,27 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
-    @IBOutlet weak var startButton: UIButton!
-    @IBOutlet weak var resetButton: UIButton!
-    @IBOutlet weak var participantsSlider: UISlider!
-    @IBOutlet weak var participantsLabel: UILabel!
-    @IBOutlet weak var salarySlider: UISlider!
-    @IBOutlet weak var salaryLabel: UILabel!
+
+    @IBOutlet weak var slidersView: SlidersView!
+    weak var participantsSlider: UISlider!
+    weak var participantsLabel: UILabel!
+    weak var salarySlider: UISlider!
+    weak var salaryLabel: UILabel!
+    
+    @IBOutlet weak var controlsView: ControlsView!
+    weak var startButton: UIButton!
+    weak var resetButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startButton = controlsView.startButton
+        resetButton = controlsView.resetButton
+        participantsLabel = slidersView.participantsLabel
+        participantsSlider = slidersView.participantsSlider
+        salaryLabel = slidersView.salaryLabel
+        salarySlider = slidersView.salarySlider
         
         salarySlider.minimumValue = log(1.45)
         salarySlider.maximumValue = log(2000)

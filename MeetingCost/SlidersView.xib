@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SlidersView" customModule="MeetingCost">
+            <connections>
+                <outlet property="participantsLabel" destination="vDP-bg-ly8" id="zsx-Ls-a4U"/>
+                <outlet property="participantsSlider" destination="LwI-hd-qnK" id="rgd-a0-uCN"/>
+                <outlet property="salaryLabel" destination="Eqn-mF-3Bi" id="p6f-XY-Mwd"/>
+                <outlet property="salarySlider" destination="NNV-ge-MTJ" id="HLX-R4-jvH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="fdsfs" id="j2p-b2-oNe" userLabel="Sliders">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of participants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKS-hT-83s">
+                    <rect key="frame" x="8" y="8" width="177" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDP-bg-ly8">
+                    <rect key="frame" x="580" y="8" width="11.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="widthClass=compact" ambiguous="YES">
+                        <rect key="frame" x="340" y="8" width="11.5" height="20.5"/>
+                    </variation>
+                    <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                        <rect key="frame" x="740" y="8" width="11.5" height="20.5"/>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THl-IG-Ajn">
+                    <rect key="frame" x="8" y="533" width="112" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqn-mF-3Bi">
+                    <rect key="frame" x="580" y="533" width="11.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="widthClass=compact" ambiguous="YES">
+                        <rect key="frame" x="340" y="58" width="11.5" height="20.5"/>
+                    </variation>
+                    <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                        <rect key="frame" x="740" y="58" width="11.5" height="20.5"/>
+                    </variation>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NNV-ge-MTJ">
+                    <rect key="frame" x="6" y="562" width="588" height="31"/>
+                    <variation key="widthClass=compact" ambiguous="YES">
+                        <rect key="frame" x="6" y="79" width="348" height="31"/>
+                    </variation>
+                    <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                        <rect key="frame" x="6" y="79" width="748" height="31"/>
+                    </variation>
+                </slider>
+                <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LwI-hd-qnK">
+                    <rect key="frame" x="6" y="36" width="588" height="490"/>
+                    <variation key="widthClass=compact" ambiguous="YES">
+                        <rect key="frame" x="6" y="28" width="348" height="31"/>
+                    </variation>
+                    <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                        <rect key="frame" x="6" y="28" width="748" height="31"/>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                        <rect key="frame" x="6" y="28" width="348" height="155"/>
+                    </variation>
+                </slider>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottomMargin" secondItem="NNV-ge-MTJ" secondAttribute="bottom" id="1Pw-Lo-0v9"/>
+                <constraint firstItem="Eqn-mF-3Bi" firstAttribute="bottom" secondItem="THl-IG-Ajn" secondAttribute="bottom" id="2aU-f4-3Vq"/>
+                <constraint firstItem="THl-IG-Ajn" firstAttribute="leading" secondItem="j2p-b2-oNe" secondAttribute="leadingMargin" id="Iov-u7-cd9"/>
+                <constraint firstAttribute="trailingMargin" secondItem="LwI-hd-qnK" secondAttribute="trailing" id="KX4-jg-Wfd"/>
+                <constraint firstItem="LwI-hd-qnK" firstAttribute="leading" secondItem="j2p-b2-oNe" secondAttribute="leadingMargin" id="KuT-pV-y9T"/>
+                <constraint firstItem="vDP-bg-ly8" firstAttribute="top" secondItem="ZKS-hT-83s" secondAttribute="top" id="Nj7-GF-Ebd"/>
+                <constraint firstItem="THl-IG-Ajn" firstAttribute="top" secondItem="LwI-hd-qnK" secondAttribute="bottom" constant="8" id="Re1-jc-iXC"/>
+                <constraint firstAttribute="trailingMargin" secondItem="Eqn-mF-3Bi" secondAttribute="trailing" id="ZP1-jP-qfa"/>
+                <constraint firstItem="ZKS-hT-83s" firstAttribute="top" secondItem="j2p-b2-oNe" secondAttribute="topMargin" id="eJe-Ls-Kfu"/>
+                <constraint firstItem="LwI-hd-qnK" firstAttribute="top" secondItem="ZKS-hT-83s" secondAttribute="bottom" constant="8" id="j2g-81-l6E"/>
+                <constraint firstItem="NNV-ge-MTJ" firstAttribute="leading" secondItem="j2p-b2-oNe" secondAttribute="leadingMargin" id="jvf-aM-ava"/>
+                <constraint firstAttribute="trailingMargin" secondItem="NNV-ge-MTJ" secondAttribute="trailing" id="qae-w9-E5X"/>
+                <constraint firstItem="NNV-ge-MTJ" firstAttribute="top" secondItem="THl-IG-Ajn" secondAttribute="bottom" constant="8" id="uEa-5d-kCs"/>
+                <constraint firstItem="ZKS-hT-83s" firstAttribute="leading" secondItem="j2p-b2-oNe" secondAttribute="leadingMargin" id="vo7-Ul-bpX"/>
+                <constraint firstAttribute="trailingMargin" secondItem="vDP-bg-ly8" secondAttribute="trailing" id="xnt-mH-qMF"/>
+            </constraints>
+            <variation key="widthClass=compact" ambiguous="YES">
+                <rect key="frame" x="20" y="483" width="360" height="117"/>
+            </variation>
+            <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                <rect key="frame" x="20" y="483" width="760" height="117"/>
+            </variation>
+            <point key="canvasLocation" x="78" y="500"/>
+        </view>
+    </objects>
+</document>

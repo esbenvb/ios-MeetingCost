@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9020BCAC1C24B6A300CD70EB /* ControlsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9020BCAB1C24B6A300CD70EB /* ControlsView.xib */; };
+		9020BCB01C24D15600CD70EB /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9020BCAF1C24D15600CD70EB /* ControlsView.swift */; };
 		904109191C22114E00E7B6C8 /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 904109181C22114E00E7B6C8 /* MainScreen.storyboard */; };
+		907F30B41C2A2D0500541374 /* SlidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F30B31C2A2D0500541374 /* SlidersView.swift */; };
+		909271D01C275E7900EE693D /* ResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 909271CF1C275E7900EE693D /* ResultView.xib */; };
+		909271D21C27603700EE693D /* SlidersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 909271D11C27603700EE693D /* SlidersView.xib */; };
 		90C23BE61AC75D620054F850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C23BE51AC75D620054F850 /* AppDelegate.swift */; };
 		90C23BE81AC75D620054F850 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C23BE71AC75D620054F850 /* ViewController.swift */; };
 		90C23BED1AC75D620054F850 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C23BEC1AC75D620054F850 /* Images.xcassets */; };
@@ -27,7 +32,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9020BCAB1C24B6A300CD70EB /* ControlsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControlsView.xib; sourceTree = "<group>"; };
+		9020BCAF1C24D15600CD70EB /* ControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ControlsView.swift; path = ../ControlsView.swift; sourceTree = "<group>"; };
 		904109181C22114E00E7B6C8 /* MainScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
+		907F30B31C2A2D0500541374 /* SlidersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidersView.swift; sourceTree = "<group>"; };
+		909271CF1C275E7900EE693D /* ResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultView.xib; sourceTree = "<group>"; };
+		909271D11C27603700EE693D /* SlidersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlidersView.xib; sourceTree = "<group>"; };
 		90C23BE01AC75D620054F850 /* MeetingCost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetingCost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C23BE41AC75D620054F850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90C23BE51AC75D620054F850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,11 +91,16 @@
 			children = (
 				90C23BE51AC75D620054F850 /* AppDelegate.swift */,
 				90FB23081B15066100C008B8 /* AppState.swift */,
+				9020BCAF1C24D15600CD70EB /* ControlsView.swift */,
+				9020BCAB1C24B6A300CD70EB /* ControlsView.xib */,
 				90C23BEC1AC75D620054F850 /* Images.xcassets */,
 				90C23BEE1AC75D620054F850 /* LaunchScreen.xib */,
+				904109181C22114E00E7B6C8 /* MainScreen.storyboard */,
+				909271CF1C275E7900EE693D /* ResultView.xib */,
+				907F30B31C2A2D0500541374 /* SlidersView.swift */,
+				909271D11C27603700EE693D /* SlidersView.xib */,
 				90C23BE31AC75D620054F850 /* Supporting Files */,
 				90C23BE71AC75D620054F850 /* ViewController.swift */,
-				904109181C22114E00E7B6C8 /* MainScreen.storyboard */,
 			);
 			path = MeetingCost;
 			sourceTree = "<group>";
@@ -198,7 +213,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				90C23BF01AC75D620054F850 /* LaunchScreen.xib in Resources */,
+				909271D21C27603700EE693D /* SlidersView.xib in Resources */,
+				9020BCAC1C24B6A300CD70EB /* ControlsView.xib in Resources */,
 				90C23BED1AC75D620054F850 /* Images.xcassets in Resources */,
+				909271D01C275E7900EE693D /* ResultView.xib in Resources */,
 				904109191C22114E00E7B6C8 /* MainScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +235,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9020BCB01C24D15600CD70EB /* ControlsView.swift in Sources */,
+				907F30B41C2A2D0500541374 /* SlidersView.swift in Sources */,
 				90FB23091B15066100C008B8 /* AppState.swift in Sources */,
 				90C23BE81AC75D620054F850 /* ViewController.swift in Sources */,
 				90C23BE61AC75D620054F850 /* AppDelegate.swift in Sources */,

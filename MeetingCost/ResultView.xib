@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <view contentMode="scaleToFill" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="100" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="94.5" id="kB0-VD-u3i" userLabel="Result">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mQ-cY-HIj">
+                    <rect key="frame" x="500" y="319" width="92" height="20.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="92" id="7gR-Kb-jVW"/>
+                        <constraint firstAttribute="width" constant="80" id="vMO-Tt-n6F"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="vMO-Tt-n6F"/>
+                        </mask>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3e-Gu-Yd2">
+                    <rect key="frame" x="8" y="66" width="66" height="526"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Lc6-fW-Peu"/>
+                        <constraint firstAttribute="width" constant="66" id="WM5-20-Gwk"/>
+                        <constraint firstAttribute="width" constant="66" id="elf-Iw-VvY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Lc6-fW-Peu"/>
+                            <exclude reference="WM5-20-Gwk"/>
+                        </mask>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$$$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRF-Wy-8Xs">
+                    <rect key="frame" x="258" y="29" width="84" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Uer-H9-apm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Uer-H9-apm"/>
+                        </mask>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost of the meeting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJ1-d6-YbZ">
+                    <rect key="frame" x="219" y="8" width="163" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="163" id="2F3-gJ-9vq"/>
+                        <constraint firstAttribute="height" constant="21" id="vpL-eL-A6K"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="3mQ-cY-HIj" firstAttribute="trailing" secondItem="kB0-VD-u3i" secondAttribute="trailingMargin" id="2Y3-Nz-D66"/>
+                <constraint firstItem="aRF-Wy-8Xs" firstAttribute="centerX" secondItem="dJ1-d6-YbZ" secondAttribute="centerX" id="8vB-If-AZ9"/>
+                <constraint firstItem="3mQ-cY-HIj" firstAttribute="centerY" secondItem="s3e-Gu-Yd2" secondAttribute="centerY" id="BkW-FF-RGJ"/>
+                <constraint firstItem="dJ1-d6-YbZ" firstAttribute="centerX" secondItem="aRF-Wy-8Xs" secondAttribute="centerX" id="CYz-BD-wXc"/>
+                <constraint firstItem="s3e-Gu-Yd2" firstAttribute="top" secondItem="aRF-Wy-8Xs" secondAttribute="bottom" constant="-4" id="DJo-4Y-u4N"/>
+                <constraint firstItem="dJ1-d6-YbZ" firstAttribute="centerX" secondItem="kB0-VD-u3i" secondAttribute="centerX" id="Oxt-mI-kqs"/>
+                <constraint firstItem="dJ1-d6-YbZ" firstAttribute="top" secondItem="kB0-VD-u3i" secondAttribute="topMargin" id="XWA-tr-tRM"/>
+                <constraint firstItem="aRF-Wy-8Xs" firstAttribute="top" secondItem="dJ1-d6-YbZ" secondAttribute="bottom" id="fNR-il-bdb"/>
+                <constraint firstItem="s3e-Gu-Yd2" firstAttribute="bottom" secondItem="kB0-VD-u3i" secondAttribute="bottomMargin" id="rAa-Sl-F1v"/>
+                <constraint firstItem="aRF-Wy-8Xs" firstAttribute="centerX" secondItem="kB0-VD-u3i" secondAttribute="centerX" id="rLa-7k-Hbx"/>
+                <constraint firstItem="s3e-Gu-Yd2" firstAttribute="leading" secondItem="kB0-VD-u3i" secondAttribute="leadingMargin" id="stL-Yj-1r1"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Oxt-mI-kqs"/>
+                    <exclude reference="8vB-If-AZ9"/>
+                </mask>
+            </variation>
+        </view>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+    </objects>
+</document>

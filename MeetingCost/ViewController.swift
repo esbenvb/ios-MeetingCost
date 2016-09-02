@@ -14,22 +14,18 @@ class ViewController: UIViewController {
             continueAfterLoading()
         }
     }
-    
-    
-    let durationLabelPrefix = "Duration: "
-    let costLabelPrefix = "Cost: "
-    
-    var priceLabel: UILabel?
-    var priceSlider: UISlider?
-    
-    var peopleLabel: UILabel?
-    var peopleSlider: UISlider?
-    
-    var startButton: UIButton?
-    var resetButton: UIButton?
 
-    var durationLabel: UILabel?
-    var totalCostLabel: UILabel?
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var priceSlider: UISlider!
+    
+    @IBOutlet weak var peopleLabel: UILabel!
+    @IBOutlet weak var peopleSlider: UISlider!
+
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
+    
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var totalCostLabel: UILabel!
     
     var currentDuration = 0
     var previousDuration = 0
@@ -43,52 +39,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let priceTopLabel = UILabel(frame: CGRectMake(10, 30, 320, 20))
-        priceTopLabel.text = "Average hourly price or salary"
-        self.view.addSubview(priceTopLabel)
 
-        priceSlider = UISlider(frame: CGRectMake(10, 70, 320, 20))
-        priceSlider!.minimumValue = log(1.45) // Make it start at 1 but close to 2
-        priceSlider!.maximumValue = log(2000)
-        priceSlider!.continuous = true
-        priceSlider!.addTarget(self, action: #selector(ViewController.priceSliderChange), forControlEvents: .ValueChanged)
-        self.view.addSubview(priceSlider!)
+        priceSlider.minimumValue = log(1.45) // Make it start at 1 but close to 2
+        priceSlider.maximumValue = log(2000)
         
-        priceLabel = UILabel(frame: CGRectMake(10, 110, 320, 20))
-        self.view.addSubview(priceLabel!)
+        
+        peopleSlider.minimumValue = log(2.45) // Make it start at 2 but close to 3
+        peopleSlider.maximumValue = log(100)
 
-        let peopleTopLabel = UILabel(frame: CGRectMake(10, 130, 320, 20))
-        peopleTopLabel.text = "Number of people"
-        self.view.addSubview(peopleTopLabel)
-        
-        peopleSlider = UISlider(frame: CGRectMake(10, 170, 320, 20))
-        peopleSlider!.minimumValue = log(2.45) // Make it start at 2 but close to 3
-        peopleSlider!.maximumValue = log(100)
-        peopleSlider!.continuous = true
-        peopleSlider!.addTarget(self, action: #selector(ViewController.peopleSliderChange), forControlEvents: .ValueChanged)
-        self.view.addSubview(peopleSlider!)
-        
-        peopleLabel = UILabel(frame: CGRectMake(10, 210, 100, 20))
-        self.view.addSubview(peopleLabel!)
-
-        startButton = UIButton(type: UIButtonType.System)
-        startButton!.frame = CGRectMake(10, 230, 80, 40)
-        startButton!.setTitle("Start", forState: UIControlState.Normal)
-        startButton!.addTarget(self, action: #selector(ViewController.startButtonPressed), forControlEvents: .TouchUpInside)
-        self.view.addSubview(startButton!)
-
-        
-        resetButton = UIButton(type: UIButtonType.System)
-        resetButton!.frame = CGRectMake(150, 230, 80, 40)
-        resetButton!.setTitle("Reset", forState: UIControlState.Normal)
-        resetButton!.addTarget(self, action: #selector(ViewController.resetButtonPressed), forControlEvents: .TouchUpInside)
-        self.view.addSubview(resetButton!)
-        
-        durationLabel = UILabel(frame: CGRectMake(10, 290, 320, 20))
-        self.view.addSubview(durationLabel!)
-
-        totalCostLabel = UILabel(frame: CGRectMake(10, 320, 320, 20))
+        startButton.setTitle("Start", forState: UIControlState.Normal)
+        resetButton.setTitle("Reset", forState: UIControlState.Normal)
         
         if let state = AppState.loadState() {
             appState = state
@@ -96,10 +56,6 @@ class ViewController: UIViewController {
         
         updateSliders()
         updateCost()
-    
-        self.view.addSubview(totalCostLabel!)
-
-        
     }
     
     func updateSliders() {
@@ -117,11 +73,11 @@ class ViewController: UIViewController {
     
     func updateCost() {
         cost = Float(appState.elapsed * appState.people * appState.price) / 60 / 60
-        totalCostLabel!.text = costLabelPrefix + String(format: "%.02f", cost)
-        durationLabel!.text = durationLabelPrefix + durationToString(appState.elapsed)
+        totalCostLabel!.text = String(format: "%.02f", cost)
+        durationLabel!.text = durationToString(appState.elapsed)
     }
     
-    func startButtonPressed() {
+    @IBAction func startButtonPressed() {
         switch appState.state{
         // Pause
         case .Running:
@@ -186,18 +142,18 @@ class ViewController: UIViewController {
         startButton!.setTitle("Start", forState: .Normal)
     }
     
-    func resetButtonPressed() {
+    @IBAction func resetButtonPressed() {
         controlReset()
         NSLog("Reset")
     }
 
-    func priceSliderChange() {
+    @IBAction func priceSliderChange() {
         appState.price = Int(round(exp(Double(priceSlider!.value))))
         updateCost()
         priceLabel!.text = "\(appState.price)"
     }
     
-    func peopleSliderChange() {
+    @IBAction func peopleSliderChange() {
         appState.people = Int(round(exp(Double(peopleSlider!.value))))
         updateCost()
         peopleLabel!.text = "\(appState.people)"

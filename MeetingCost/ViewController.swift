@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 
     var formatter = NSDateFormatter()
     
-    var controller = MeetingCostController()
+    var controller = MeetingCostController.sharedInstance
 
 
     override func viewDidLoad() {
@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         resetButton.setTitle("Reset", forState: UIControlState.Normal)
 
         controller.delegate = self
+        controller.reload()
         
         priceSlider.minimumValue = log(1.45) // Make it start at 1 but close to 2
         priceSlider.maximumValue = log(2000)
@@ -42,6 +43,14 @@ class ViewController: UIViewController {
         updateSliders()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+    
     func updateSliders() {
         peopleSlider?.value = log(Float(controller.appState.people))
         peopleSliderChange()
@@ -108,11 +117,4 @@ extension ViewController: MeetingCostStatusDelegate {
         startButton.setTitle("Continue", forState: .Normal)
         resetButton.enabled = true
     }
-}
-
-protocol MeetingCostStatusDelegate {
-    func statusStarted()
-    func statusPaused()
-    func statusReset()
-    func statusUpdate()
 }

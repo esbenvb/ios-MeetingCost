@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MeetingCost
 
 enum StateEnumerator: Int {
     case Running
@@ -22,6 +23,7 @@ struct AppStateKeys {
     static let startTime = "StartTimeKey"
 }
 
+@objc(AppState)
 class AppState: NSObject {
     static var sharedInstance = AppState.loadState()
 
@@ -84,10 +86,20 @@ class AppState: NSObject {
         aCoder.encodeObject(startTime, forKey: AppStateKeys.startTime)
     }
 
-    static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+    static let DocumentsDirectory = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.dk.vonbuchwald.esben.MeetingCost")!
     static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("MeetingCostState")
-
+    
+    func reload() {
+        let newState = AppState.loadState()
+        self.elapsed = newState.elapsed
+        self.people = newState.people
+        self.price = newState.price
+        self.state = newState.state
+        self.startTime = newState.startTime
+    }
+    
     class func loadState() -> AppState {
+        print(ArchiveURL)
         guard let state = NSKeyedUnarchiver.unarchiveObjectWithFile(AppState.ArchiveURL.path!) as? AppState else {
             return AppState()
         }

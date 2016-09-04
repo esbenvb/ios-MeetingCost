@@ -8,26 +8,8 @@
 
 import Foundation
 
-class MeetingCostController: NSObject {
-    var delegate: MeetingCostStatusDelegate? {
-        didSet {
-            print("CONTINUE")
-            print (appState.startTime)
-            switch appState.state {
-            case .Running:
-                timer.invalidate()
-                timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(clockTick), userInfo: nil, repeats: true)
-                delegate?.statusStarted()
-            case .Paused:
-                delegate?.statusPaused()
-                previousDuration = appState.elapsed
-            case .Stopped:
-                delegate?.statusReset()
-            }
-            updateCost()
-            delegate?.statusUpdate()
-        }
-    }
+public class MeetingCostController: NSObject {
+    var delegate: MeetingCostStatusDelegate?
 
     let appState = AppState.sharedInstance
     var currentDuration = 0
@@ -35,11 +17,12 @@ class MeetingCostController: NSObject {
     var cost: Double = 0.0
     var timer = NSTimer()
 
-    override init() {
-        super.init()
-        appState.delegates.append(self)
-    }
     
+    static var sharedInstance: MeetingCostController = {
+        let controller = MeetingCostController()
+        controller.appState.delegates.append(controller)
+        return controller
+    }()
     
     func clockTick() {
         currentDuration = Int(NSDate().timeIntervalSinceDate(appState.startTime))
@@ -78,10 +61,40 @@ class MeetingCostController: NSObject {
         delegate?.statusReset()
         delegate?.statusUpdate()
     }
+    
+    func reload() {
+        appState.reload()
+        print("CONTINUE")
+        print (appState.startTime)
+        switch appState.state {
+        case .Running:
+            timer.invalidate()
+            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(clockTick), userInfo: nil, repeats: true)
+            delegate?.statusStarted()
+        case .Paused:
+            timer.invalidate()
+            delegate?.statusPaused()
+            previousDuration = appState.elapsed        // TODO: Check if this is always correct
+        case .Stopped:
+            timer.invalidate()
+            delegate?.statusReset()
+        }
+        
+        updateCost()
+        delegate?.statusUpdate()
+    }
 }
 
 extension MeetingCostController: AppStateDelegate {
     func appStateUpdate() {
         updateCost()
     }
+}
+
+
+public protocol MeetingCostStatusDelegate {
+    func statusStarted()
+    func statusPaused()
+    func statusReset()
+    func statusUpdate()
 }

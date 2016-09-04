@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90388CA71D7C44C800CAE70D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90388CA61D7C44C800CAE70D /* NotificationCenter.framework */; };
+		90388CAA1D7C44C800CAE70D /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90388CA91D7C44C800CAE70D /* TodayViewController.swift */; };
+		90388CAD1D7C44C800CAE70D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90388CAB1D7C44C800CAE70D /* MainInterface.storyboard */; };
+		90388CB11D7C44C800CAE70D /* TodayWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 90388CA41D7C44C700CAE70D /* TodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		905B3E2A1D7C5B0300223963 /* MeetingCostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905B3E291D7C5B0300223963 /* MeetingCostController.swift */; };
 		90BB41861D7A2A2C000AA959 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90BB41851D7A2A2C000AA959 /* Main.storyboard */; };
 		90BB41891D7A2BA4000AA959 /* ViewController2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB41881D7A2BA4000AA959 /* ViewController2ViewController.swift */; };
 		90C23BE61AC75D620054F850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C23BE51AC75D620054F850 /* AppDelegate.swift */; };
@@ -18,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		90388CAF1D7C44C800CAE70D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 90C23BD81AC75D620054F850 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 90388CA31D7C44C700CAE70D;
+			remoteInfo = TodayWidget;
+		};
 		90C23BF61AC75D620054F850 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 90C23BD81AC75D620054F850 /* Project object */;
@@ -27,7 +39,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		90388CB51D7C44C800CAE70D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				90388CB11D7C44C800CAE70D /* TodayWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		90388CA41D7C44C700CAE70D /* TodayWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		90388CA61D7C44C800CAE70D /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		90388CA91D7C44C800CAE70D /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		90388CAC1D7C44C800CAE70D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		90388CAE1D7C44C800CAE70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		905B3E291D7C5B0300223963 /* MeetingCostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingCostController.swift; sourceTree = SOURCE_ROOT; };
 		90BB41851D7A2A2C000AA959 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		90BB41881D7A2BA4000AA959 /* ViewController2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2ViewController.swift; sourceTree = "<group>"; };
 		90C23BE01AC75D620054F850 /* MeetingCost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetingCost.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +75,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		90388CA11D7C44C700CAE70D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90388CA71D7C44C800CAE70D /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		90C23BDD1AC75D620054F850 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,11 +100,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90388CA51D7C44C800CAE70D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90388CA61D7C44C800CAE70D /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90388CA81D7C44C800CAE70D /* TodayWidget */ = {
+			isa = PBXGroup;
+			children = (
+				90388CA91D7C44C800CAE70D /* TodayViewController.swift */,
+				90388CAB1D7C44C800CAE70D /* MainInterface.storyboard */,
+				90388CAE1D7C44C800CAE70D /* Info.plist */,
+			);
+			path = TodayWidget;
+			sourceTree = "<group>";
+		};
 		90C23BD71AC75D620054F850 = {
 			isa = PBXGroup;
 			children = (
 				90C23BE21AC75D620054F850 /* MeetingCost */,
 				90C23BF81AC75D620054F850 /* MeetingCostTests */,
+				90388CA81D7C44C800CAE70D /* TodayWidget */,
+				90388CA51D7C44C800CAE70D /* Frameworks */,
 				90C23BE11AC75D620054F850 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +134,7 @@
 			children = (
 				90C23BE01AC75D620054F850 /* MeetingCost.app */,
 				90C23BF51AC75D620054F850 /* MeetingCostTests.xctest */,
+				90388CA41D7C44C700CAE70D /* TodayWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +147,7 @@
 				90FB23081B15066100C008B8 /* AppState.swift */,
 				90C23BEC1AC75D620054F850 /* Images.xcassets */,
 				90C23BEE1AC75D620054F850 /* LaunchScreen.xib */,
+				905B3E291D7C5B0300223963 /* MeetingCostController.swift */,
 				90C23BE31AC75D620054F850 /* Supporting Files */,
 				90C23BE71AC75D620054F850 /* ViewController.swift */,
 				90BB41881D7A2BA4000AA959 /* ViewController2ViewController.swift */,
@@ -121,6 +183,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		90388CA31D7C44C700CAE70D /* TodayWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90388CB41D7C44C800CAE70D /* Build configuration list for PBXNativeTarget "TodayWidget" */;
+			buildPhases = (
+				90388CA01D7C44C700CAE70D /* Sources */,
+				90388CA11D7C44C700CAE70D /* Frameworks */,
+				90388CA21D7C44C700CAE70D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodayWidget;
+			productName = TodayWidget;
+			productReference = 90388CA41D7C44C700CAE70D /* TodayWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		90C23BDF1AC75D620054F850 /* MeetingCost */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90C23BFF1AC75D620054F850 /* Build configuration list for PBXNativeTarget "MeetingCost" */;
@@ -128,10 +207,12 @@
 				90C23BDC1AC75D620054F850 /* Sources */,
 				90C23BDD1AC75D620054F850 /* Frameworks */,
 				90C23BDE1AC75D620054F850 /* Resources */,
+				90388CB51D7C44C800CAE70D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				90388CB01D7C44C800CAE70D /* PBXTargetDependency */,
 			);
 			name = MeetingCost;
 			productName = MeetingCost;
@@ -167,6 +248,9 @@
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Esben von Buchwald";
 				TargetAttributes = {
+					90388CA31D7C44C700CAE70D = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					90C23BDF1AC75D620054F850 = {
 						CreatedOnToolsVersion = 6.2;
 					};
@@ -191,11 +275,20 @@
 			targets = (
 				90C23BDF1AC75D620054F850 /* MeetingCost */,
 				90C23BF41AC75D620054F850 /* MeetingCostTests */,
+				90388CA31D7C44C700CAE70D /* TodayWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		90388CA21D7C44C700CAE70D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90388CAD1D7C44C800CAE70D /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		90C23BDE1AC75D620054F850 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,6 +309,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		90388CA01D7C44C700CAE70D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90388CAA1D7C44C800CAE70D /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		90C23BDC1AC75D620054F850 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -224,6 +325,7 @@
 				90C23BE81AC75D620054F850 /* ViewController.swift in Sources */,
 				90BB41891D7A2BA4000AA959 /* ViewController2ViewController.swift in Sources */,
 				90C23BE61AC75D620054F850 /* AppDelegate.swift in Sources */,
+				905B3E2A1D7C5B0300223963 /* MeetingCostController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +340,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		90388CB01D7C44C800CAE70D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 90388CA31D7C44C700CAE70D /* TodayWidget */;
+			targetProxy = 90388CAF1D7C44C800CAE70D /* PBXContainerItemProxy */;
+		};
 		90C23BF71AC75D620054F850 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 90C23BDF1AC75D620054F850 /* MeetingCost */;
@@ -246,6 +353,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		90388CAB1D7C44C800CAE70D /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90388CAC1D7C44C800CAE70D /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		90C23BEE1AC75D620054F850 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -257,6 +372,39 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		90388CB21D7C44C800CAE70D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Skandinavisk Data Center A/S";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = TodayWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.vonbuchwald.esben.MeetingCost.TodayWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		90388CB31D7C44C800CAE70D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Skandinavisk Data Center A/S";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = TodayWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.vonbuchwald.esben.MeetingCost.TodayWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		90C23BFD1AC75D620054F850 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -340,10 +488,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Skandinavisk Data Center A/S";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MeetingCost/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c9582a38-2ce0-40ce-aeda-47728a41ded9";
 			};
 			name = Debug;
 		};
@@ -351,10 +502,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Skandinavisk Data Center A/S";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MeetingCost/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c9582a38-2ce0-40ce-aeda-47728a41ded9";
 			};
 			name = Release;
 		};
@@ -395,6 +549,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		90388CB41D7C44C800CAE70D /* Build configuration list for PBXNativeTarget "TodayWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90388CB21D7C44C800CAE70D /* Debug */,
+				90388CB31D7C44C800CAE70D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		90C23BDB1AC75D620054F850 /* Build configuration list for PBXProject "MeetingCost" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

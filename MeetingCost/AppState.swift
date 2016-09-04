@@ -22,12 +22,11 @@ struct AppStateKeys {
     static let startTime = "StartTimeKey"
 }
 
-// FIXME: Make singleton/Get instance stuff
-
-
 class AppState: NSObject {
     static var sharedInstance = AppState.loadState()
 
+    var delegates: [AppStateDelegate] = []
+    
     var elapsed = 0
     var people = 0 {
         didSet {
@@ -98,8 +97,15 @@ class AppState: NSObject {
     }
 
     func saveState() -> Bool {
+        for delegate in delegates {
+            delegate.appStateUpdate()
+        }
         print("SAVING")
         print(startTime)
         return NSKeyedArchiver.archiveRootObject(self, toFile: AppState.ArchiveURL.path!)
     }
+}
+
+protocol AppStateDelegate {
+    func appStateUpdate()
 }
